@@ -1,0 +1,20 @@
+body {
+  line-height: 1.5;
+  font-family: Roboto, 'Open Sans', sans-serif;
+/*  font-size: clamp(0.938rem, 2vw, 1rem);*/
+}
+
+.card {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Internet Explorer and Edge */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
