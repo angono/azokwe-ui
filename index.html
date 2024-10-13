@@ -2,268 +2,335 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <!-- Tailwind CSS Play CDN (mainly for development/testing purposes) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="static/tailwind.css">
 
-    <title>Azokwe</title>
+    <title>Azokwe - News feed</title>
 </head>
-<body class="bg-black">
-    <header class="antialiased">
-        <nav class="fixed top-0 w-full bg-black px-4 lg:px-6 py-2">
+<body class="bg-indigo-50">
+    <div class="antialiased bg-indigo-50">
+        <nav class="bg-white px-4 py-2 fixed left-0 right-0 top-0 z-50">
             <div class="flex flex-wrap justify-between items-center">
-                <a href="index.html" class="flex mr-4">
-                    <span class="self-center text-xl sm:text-2xl text-gray-300 hover:text-white">Azokwe</span>
-                </a>
+                <div class="flex justify-start items-center">
+                    <a href="index.html" class="flex items-center justify-between">
+                        <img src="static/logo4.ico" class="mr-3 h-8 rounded-full hidden sm:block" alt="Azokwe Logo"/>
+                        <span class="self-center text-2xl text-indigo-600 font-medium">Azokwe</span>
+                    </a>
+                    <form action="#" method="GET" class="hidden md:block md:pl-2">
+                        <label for="topbar-search" class="sr-only">Search</label>
+                        <div class="relative md:w-64 md:w-96">
+                          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"></path></svg>
+                          </div>
+                            <input type="text" name="email" id="topbar-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5" placeholder="Search"/>
+                        </div>
+                    </form>
+                </div>
                 <div class="flex items-center lg:order-2 space-x-2 sm:space-x-4">
-                    <a href="#" type="button" class="p-2 text-gray-300 hover:text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" /><path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" /></svg>
-                    </a>
+                    <button type="button" class="text-white mr-1 bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 text-center">New Post</button>
 
-                    <a href="#" type="button" class="p-2 text-gray-300 hover:text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" /></svg>
-                    </a>
-
-                    <a href="#" type="button" class="p-2 text-gray-300 hover:text-white">
+                    <a href="#" type="button" class="p-2 text-indigo-600 hover:bg-indigo-100 rounded-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path d="M5.85 3.5a.75.75 0 0 0-1.117-1 9.719 9.719 0 0 0-2.348 4.876.75.75 0 0 0 1.479.248A8.219 8.219 0 0 1 5.85 3.5ZM19.267 2.5a.75.75 0 1 0-1.118 1 8.22 8.22 0 0 1 1.987 4.124.75.75 0 0 0 1.48-.248A9.72 9.72 0 0 0 19.266 2.5Z" /><path fill-rule="evenodd" d="M12 2.25A6.75 6.75 0 0 0 5.25 9v.75a8.217 8.217 0 0 1-2.119 5.52.75.75 0 0 0 .298 1.206c1.544.57 3.16.99 4.831 1.243a3.75 3.75 0 1 0 7.48 0 24.583 24.583 0 0 0 4.83-1.244.75.75 0 0 0 .298-1.205 8.217 8.217 0 0 1-2.118-5.52V9A6.75 6.75 0 0 0 12 2.25ZM9.75 18c0-.034 0-.067.002-.1a25.05 25.05 0 0 0 4.496 0l.002.1a2.25 2.25 0 1 1-4.5 0Z" clip-rule="evenodd" /></svg>
                     </a>
 
-                    <a href="#" type="button" class="p-2 text-gray-300 hover:text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 0 0 2.28-.819l.923-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 0 0 0-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 0 0-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 0 0-1.85-1.567h-1.843ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z" clip-rule="evenodd" /></svg>
-                    </a>
-
-                    <a href="profile.html" type="button" class="p-2 text-gray-300 hover:text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
-                    </a>            
+                    <button type="button" class="flex mx-3 text-sm bg-indigo-800 rounded-full md:mr-0 focus:ring-4 focus:ring-indigo-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-8 h-8 rounded-full" src="static/1.jpg" alt="user photo"/>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded-lg divide-y divide-gray-100 shadow" id="dropdown">
+                        <div class="py-3 px-4">
+                            <span class="block text-sm font-semibold text-indigo-600">Neil Sims</span>
+                            <span class="block text-sm text-gray-500 truncate">name@flowbite.com</span>
+                        </div>
+                        <ul class="py-1 text-gray-700" aria-labelledby="dropdown">
+                            <li>
+                                <a href="profile.html" class="block py-2 px-4 text-sm hover:bg-gray-100">My profile</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">Account settings</a>
+                            </li>
+                        </ul>
+                        <ul class="py-1 text-gray-700" aria-labelledby="dropdown">
+                            <li>
+                                <a href="#" class="flex items-center py-2 px-4 text-sm hover:bg-gray-100"><svg class="size-6 mr-2 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m17 21-5-4-5 4V3.889a.92.92 0 0 1 .244-.629.808.808 0 0 1 .59-.26h8.333a.81.81 0 0 1 .589.26.92.92 0 0 1 .244.63V21Z"/></svg>Bookmarks</a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center py-2 px-4 text-sm hover:bg-gray-100"><svg class="size-6 mr-2 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 19h4a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-2m-2.236-4a3 3 0 1 0 0-4M3 18v-1a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm8-10a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>People</a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center py-2 px-4 text-sm hover:bg-gray-100"><svg class="size-6 text-gray-400 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4.37 7.657c2.063.528 2.396 2.806 3.202 3.87 1.07 1.413 2.075 1.228 3.192 2.644 1.805 2.289 1.312 5.705 1.312 6.705M20 15h-1a4 4 0 0 0-4 4v1M8.587 3.992c0 .822.112 1.886 1.515 2.58 1.402.693 2.918.351 2.918 2.334 0 .276 0 2.008 1.972 2.008 2.026.031 2.026-1.678 2.026-2.008 0-.65.527-.9 1.177-.9H20M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>Languages</a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center py-2 px-4 text-sm hover:bg-gray-100"><svg class="size-6 mr-2 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>About</a>
+                            </li>
+                        </ul>
+                        <ul class="py-1 text-gray-700" aria-labelledby="dropdown">
+                            <li>
+                                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
-    </header>
 
-    <main class="py-16 bg-transparent" id="mainContainerTag">
-        <div class="mx-auto max-w-lg w-full" id="postContainer">
-            <div class="xs:px-2 gap-2 mb-4">
-                <div class="overflow-x-auto whitespace-nowrap scrollbar-hide">
-                    <ul class="flex space-x-4">
-                        <li class="list-group-item"><a href="#" class="flex bg-green-100 text-green-800 text-sm font-medium px-3 py-2 rounded">Question</a></li>
-                        <li class="list-group-item"><a href="#" class="flex bg-green-100 text-green-800 text-sm font-medium px-3 py-2 rounded">Devotional</a></li>
-                        <li class="list-group-item"><a href="#" class="flex bg-green-100 text-green-800 text-sm font-medium px-3 py-2 rounded">Meditation</a></li>
-                        <li class="list-group-item"><a href="#" class="flex bg-green-100 text-green-800 text-sm font-medium px-3 py-2 rounded">Bible Study</a></li>
-                        <li class="list-group-item"><a href="#" class="flex bg-green-100 text-green-800 text-sm font-medium px-3 py-2 rounded">Worship</a></li>
-                        <li class="list-group-item"><a href="#" class="flex bg-green-100 text-green-800 text-sm font-medium px-3 py-2 rounded">Prayer Request</a></li>
-                        <li class="list-group-item"><a href="#" class="flex bg-green-100 text-green-800 text-sm font-medium px-3 py-2 rounded">Sermon</a></li>
+        <!-- <main class="p-4 xs:p-2 md:ml-64 h-auto pt-20"> -->
+        <main class="p-2 xs:p-4 h-auto pt-16 sm:pt-20">
+            <div class="w-full max-w-xl mx-auto bg-white border border-gray-200 rounded-lg p-4 sm:px-6">
+               <div class="flow-root">
+                    <ul role="list" class="divide-y divide-gray-200">
+                        <li class="py-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="w-8 h-8 rounded-full" src="static/1.jpg" alt="Neil image">
+                                </div>
+                                <div class="flex-1 min-w-0 ms-4">
+                                    <p class="text-sm font-medium text-gray-900 truncate">Neil Sims</p>
+                                    <p class="text-sm text-gray-500 truncate">Feb. 20, 2024 • <span class="text-green-600">#Question</span></p>
+                                </div>
+                                <button class="inline-flex items-center text-sm font-medium text-indigo-600 hover:bg-indigo-100 p-1 rounded-lg">
+                                    Update
+                                </button>
+                            </div>
+                            <a href="detail.html" class="space-y-4 mt-2">
+                                <div class="text-gray-500">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
+                                </div>
+                                <img class="mx-auto w-full rounded" src="static/1.jpg" alt="post image" loading="eager|lazy" />
+                            </a>
+
+                            <div class="flex w-full items-center justify-around mt-2">
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+                                    <span class="text-gray-500 ml-1">200</span>
+                                </button>
+
+                                <a href="#" class="flex rounded-full hover:bg-indigo-100 px-2 py-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
+                                    <span class="text-gray-500 ml-1">65</span>
+                                </a>
+
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
+                                    <span class="text-gray-500 ml-1">30</span>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="py-3 sm:py-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="w-8 h-8 rounded-full" src="static/2.jpg" alt="Neil image">
+                                </div>
+                                <div class="flex-1 min-w-0 ms-4">
+                                    <p class="text-sm font-medium text-gray-900 truncate">Neil Sims</p>
+                                    <p class="text-sm text-gray-500 truncate">Feb. 20, 2024 • <span class="text-green-600">#Question</span></p>
+                                </div>
+                                <button class="inline-flex items-center text-sm font-medium text-indigo-600 hover:bg-indigo-100 p-1 rounded-lg">
+                                    Update
+                                </button>
+                            </div>
+                            <a href="detail.html" class="space-y-4 mt-2">
+                                <div class="text-gray-500">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
+                                </div>
+                            </a>
+
+                            <div class="flex w-full items-center justify-around mt-2">
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+                                    <span class="text-gray-500 ml-1">200</span>
+                                </button>
+
+                                <a href="#" class="flex rounded-full hover:bg-indigo-100 px-2 py-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
+                                    <span class="text-gray-500 ml-1">65</span>
+                                </a>
+
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
+                                    <span class="text-gray-500 ml-1">30</span>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="py-3 sm:py-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="w-8 h-8 rounded-full" src="static/3.jpg" alt="Neil image">
+                                </div>
+                                <div class="flex-1 min-w-0 ms-4">
+                                    <p class="text-sm font-medium text-gray-900 truncate">Neil Sims</p>
+                                    <p class="text-sm text-gray-500 truncate">Feb. 20, 2024 • <span class="text-green-600">#Question</span></p>
+                                </div>
+                                <button class="inline-flex items-center text-sm font-medium text-indigo-600 hover:bg-indigo-100 p-1 rounded-lg">
+                                    Update
+                                </button>
+                            </div>
+                            <a href="detail.html" class="space-y-4 mt-2">
+                                <div class="text-gray-500">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
+                                </div>
+                                <img class="mx-auto w-full rounded" src="static/2.jpg" alt="post image" loading="eager|lazy" />
+                            </a>
+
+                            <div class="flex w-full items-center justify-around mt-2">
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+                                    <span class="text-gray-500 ml-1">200</span>
+                                </button>
+
+                                <a href="#" class="flex rounded-full hover:bg-indigo-100 px-2 py-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
+                                    <span class="text-gray-500 ml-1">65</span>
+                                </a>
+
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
+                                    <span class="text-gray-500 ml-1">30</span>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="py-3 sm:py-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="w-8 h-8 rounded-full" src="static/4.jpg" alt="Neil image">
+                                </div>
+                                <div class="flex-1 min-w-0 ms-4">
+                                    <p class="text-sm font-medium text-gray-900 truncate">Neil Sims</p>
+                                    <p class="text-sm text-gray-500 truncate">Feb. 20, 2024 • <span class="text-green-600">#Question</span></p>
+                                </div>
+                                <button class="inline-flex items-center text-sm font-medium text-indigo-600 hover:bg-indigo-100 p-1 rounded-lg">
+                                    Update
+                                </button>
+                            </div>
+                            <a href="detail.html" class="space-y-4 mt-2">
+                                <div class="text-gray-500">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
+                                </div>
+                                <img class="mx-auto w-full rounded" src="static/3.jpg" alt="post image" loading="eager|lazy" />
+                            </a>
+
+                            <div class="flex w-full items-center justify-around mt-2">
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+                                    <span class="text-gray-500 ml-1">200</span>
+                                </button>
+
+                                <a href="#" class="flex rounded-full hover:bg-indigo-100 px-2 py-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
+                                    <span class="text-gray-500 ml-1">65</span>
+                                </a>
+
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
+                                    <span class="text-gray-500 ml-1">30</span>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="py-3 sm:py-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="w-8 h-8 rounded-full" src="static/1.jpg" alt="Neil image">
+                                </div>
+                                <div class="flex-1 min-w-0 ms-4">
+                                    <p class="text-sm font-medium text-gray-900 truncate">Neil Sims</p>
+                                    <p class="text-sm text-gray-500 truncate">Feb. 20, 2024 • <span class="text-green-600">#Question</span></p>
+                                </div>
+                                <button class="inline-flex items-center text-sm font-medium text-indigo-600 hover:bg-indigo-100 p-1 rounded-lg">
+                                    Update
+                                </button>
+                            </div>
+                            <a href="detail.html" class="space-y-4 mt-2">
+                                <div class="text-gray-500">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
+                                </div>
+                                <img class="mx-auto w-full rounded" src="static/4.jpg" alt="post image" loading="eager|lazy" />
+                            </a>
+
+                            <div class="flex w-full items-center justify-around mt-2">
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
+                                    <span class="text-gray-500 ml-1">200</span>
+                                </button>
+
+                                <a href="#" class="flex rounded-full hover:bg-indigo-100 px-2 py-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
+                                    <span class="text-gray-500 ml-1">65</span>
+                                </a>
+
+                                <button class="flex rounded-full hover:bg-indigo-100 px-2 py-1" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-indigo-600"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
+                                    <span class="text-gray-500 ml-1">30</span>
+                                </button>
+                            </div>
+                        </li>
                     </ul>
-                </div>
+               </div>
             </div>
+        </main>
+    </div>
 
-            <div class="card w-full bg-gray-800 rounded p-4 mb-2">
-                <div class="flex items-center">
-                    <a href="#" class="flex">
-                        <img src="static/1.jpg" alt="username" class="w-10 h-10 rounded-lg">
-                        <div class="ms-3 text-sm font-normal">
-                            <h3 class="inline-flex text-sm font-semibold text-white">Ayekwe</h3>
-                            <p class="text-sm text-gray-300">Feb. 20, 2024 • <span class="text-green-500">#Question</span>
-                            </p>
-                        </div>
-                    </a>
-                    <!-- DropdownMenu -->
-                    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
-                        class="ms-auto self-center rounded-full hover:bg-gray-100 p-2" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-gray-300"><path fill-rule="evenodd" d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clip-rule="evenodd" /></svg>
-                    </button>
-                </div>
-                <a href="detail.html" class="space-y-4 mt-2">
-                    <div class="text-gray-300">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
-                    </div>
-                    <img class="mx-auto w-full rounded" src="static/1.jpg" alt="post image" loading="eager|lazy" />
-                </a>
 
-                <div class="flex w-full items-center justify-around mt-2">
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-                        <span class="text-gray-300 ml-1">200</span>
-                    </button>
-
-                    <a href="#" class="flex rounded-full hover:bg-green-100 px-2 py-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
-                        <span class="text-gray-300 ml-1">65</span>
-                    </a>
-
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
-                        <span class="text-gray-300 ml-1">30</span>
-                    </button>
-                </div>
+    <div class="sticky bottom-0 z-50 w-full h-15 sm:hidden block bg-white left-0">
+        <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
+            <button data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                </svg>
+                <span class="sr-only">Home</span>
+            </button>
+            <div id="tooltip-home" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Home
+                <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-
-            <div class="card w-full bg-gray-800 rounded p-4 mb-2">
-                <div class="flex items-center">
-                    <a href="#" class="flex">
-                        <img src="static/1.jpg" alt="username" class="w-10 h-10 rounded-lg">
-                        <div class="ms-3 text-sm font-normal">
-                            <h3 class="text-sm font-semibold text-white">Ayekwe</h3>
-                            <p class="text-sm text-gray-300">Feb. 20, 2024 • <span class="text-green-500">#Question</span>
-                            </p>
-                        </div>
-                    </a>
-                    <!-- DropdownMenu -->
-                    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
-                        class="ms-auto self-center rounded-full hover:bg-gray-100 p-2" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clip-rule="evenodd" /></svg>
-                    </button>
-                </div>
-                <a href="detail.html" class="space-y-4 mt-2">
-                    <div class="text-gray-300">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
-                    </div>
-                </a>
-
-                <div class="flex w-full items-center justify-around mt-2">
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-                        <span class="text-gray-300 ml-1">200</span>
-                    </button>
-
-                    <a href="#" class="flex rounded-full hover:bg-green-100 px-2 py-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
-                        <span class="text-gray-300 ml-1">65</span>
-                    </a>
-
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
-                        <span class="text-gray-300 ml-1">30</span>
-                    </button>
-                </div>
+            <button data-tooltip-target="tooltip-bookmark" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
+                    <path d="M13 20a1 1 0 0 1-.64-.231L7 15.3l-5.36 4.469A1 1 0 0 1 0 19V2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v17a1 1 0 0 1-1 1Z"/>
+                </svg>
+                <span class="sr-only">Bookmark</span>
+            </button>
+            <div id="tooltip-bookmark" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Bookmark
+                <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-
-            <div class="card w-full bg-gray-800 rounded p-4 mb-2">
-                <div class="flex items-center">
-                    <a href="#" class="flex">
-                        <img src="static/1.jpg" alt="username" class="w-10 h-10 rounded-lg">
-                        <div class="ms-3 text-sm font-normal">
-                            <h3 class="inline-flex text-sm font-semibold text-white">Ayekwe</h3>
-                            <p class="text-sm text-gray-300">Feb. 20, 2024 • <span class="text-green-500">#Question</span>
-                            </p>
-                        </div>
-                    </a>
-                    <!-- DropdownMenu -->
-                    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
-                        class="ms-auto self-center rounded-full hover:bg-gray-100 p-2" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clip-rule="evenodd" /></svg>
-                    </button>
-                </div>
-                <a href="detail.html" class="space-y-4 mt-2">
-                    <div class="text-gray-300">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
-                    </div>
-                    <img class="mx-auto w-full rounded" src="static/2.jpg" alt="post image" loading="eager|lazy" />
-                </a>
-
-                <div class="flex w-full items-center justify-around mt-2">
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-                        <span class="text-gray-300 ml-1">200</span>
-                    </button>
-
-                    <a href="#" class="flex rounded-full hover:bg-green-100 px-2 py-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
-                        <span class="text-gray-300 ml-1">65</span>
-                    </a>
-
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
-                        <span class="text-gray-300 ml-1">30</span>
-                    </button>
-                </div>
+            <button data-tooltip-target="tooltip-post" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                </svg>
+                <span class="sr-only">New post</span>
+            </button>
+            <div id="tooltip-post" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                New post
+                <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-
-            <div class="card w-full bg-gray-800 rounded p-4 mb-2">
-                <div class="flex items-center">
-                    <a href="#" class="flex">
-                        <img src="static/1.jpg" alt="username" class="w-10 h-10 rounded-lg">
-                        <div class="ms-3 text-sm font-normal">
-                            <h3 class="inline-flex text-sm font-semibold text-white">Ayekwe</h3>
-                            <p class="text-sm text-gray-300">Feb. 20, 2024 • <span class="text-green-500">#Question</span>
-                            </p>
-                        </div>
-                    </a>
-                    <!-- DropdownMenu -->
-                    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
-                        class="ms-auto self-center rounded-full hover:bg-gray-100 p-2" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clip-rule="evenodd" /></svg>
-                    </button>
-                </div>
-                <a href="detail.html" class="space-y-4 mt-2">
-                    <div class="text-gray-300">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
-                    </div>
-                    <img class="mx-auto w-full rounded" src="static/3.jpg" alt="post image" loading="eager|lazy" />
-                </a>
-
-                <div class="flex w-full items-center justify-around mt-2">
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-                        <span class="text-gray-300 ml-1">200</span>
-                    </button>
-
-                    <a href="#" class="flex rounded-full hover:bg-green-100 px-2 py-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
-                        <span class="text-gray-300 ml-1">65</span>
-                    </a>
-
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
-                        <span class="text-gray-300 ml-1">30</span>
-                    </button>
-                </div>
+            <button data-tooltip-target="tooltip-search" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+                <span class="sr-only">Search</span>
+            </button>
+            <div id="tooltip-search" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Search
+                <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
-
-            <div class="card w-full bg-gray-800 rounded p-4 mb-2">
-                <div class="flex items-center">
-                    <a href="#" class="flex">
-                        <img src="static/1.jpg" alt="username" class="w-10 h-10 rounded-lg">
-                        <div class="ms-3 text-sm font-normal">
-                            <h3 class="inline-flex text-sm font-semibold text-white">Ayekwe</h3>
-                            <p class="text-sm text-gray-300">Feb. 20, 2024 • <span class="text-green-500">#Question</span>
-                            </p>
-                        </div>
-                    </a>
-                    <!-- DropdownMenu -->
-                    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
-                        class="ms-auto self-center rounded-full hover:bg-gray-100 p-2" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"><path fill-rule="evenodd" d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clip-rule="evenodd" /></svg>
-                    </button>
-                </div>
-                <a href="detail.html" class="space-y-4 mt-2">
-                    <div class="text-gray-300">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto non debitis quas magni itaque beatae consequatur dolore velit voluptatibus autem distinctio possimus provident magnam, vitae illum, earum ut explicabo commodi.
-                    </div>
-                    <img class="mx-auto w-full rounded" src="static/4.jpg" alt="post image" loading="eager|lazy" />
-                </a>
-
-                <div class="flex w-full items-center justify-around mt-2">
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg>
-                        <span class="text-gray-300 ml-1">200</span>
-                    </button>
-
-                    <a href="#" class="flex rounded-full hover:bg-green-100 px-2 py-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" /></svg>
-                        <span class="text-gray-300 ml-1">65</span>
-                    </a>
-
-                    <button class="flex rounded-full hover:bg-green-100 px-2 py-1" type="button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
-                        <span class="text-gray-300 ml-1">30</span>
-                    </button>
-                </div>
+            <button data-tooltip-target="tooltip-settings" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12.25V1m0 11.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M4 19v-2.25m6-13.5V1m0 2.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M10 19V7.75m6 4.5V1m0 11.25a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM16 19v-2"/>
+                </svg>
+                <span class="sr-only">Settings</span>
+            </button>
+            <div id="tooltip-settings" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                Settings
+                <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
         </div>
-    </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
 </body>
 </html>
-
